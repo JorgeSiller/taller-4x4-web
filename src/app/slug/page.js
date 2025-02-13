@@ -30,7 +30,6 @@ export default function ServicePage() {
   const { slug } = useParams(); // Obtener el slug de la URL
   const service = servicesData[slug];
 
-  // Si el slug no coincide con un servicio, mostramos error
   if (!service) {
     return <div className="text-center text-red-500 text-xl p-6">Servicio no encontrado</div>;
   }
