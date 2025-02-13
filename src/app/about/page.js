@@ -1,4 +1,4 @@
-"use client";
+"use client";  // ← Esto indica que este archivo es un Client Component
 
 export default function AboutPage() {
   return (
