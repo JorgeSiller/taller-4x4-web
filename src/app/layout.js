@@ -1,14 +1,14 @@
 import "./globals.css";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Taller 4x4 - Modificaciones y Reparaciones",
+  description: "Somos expertos en modificaciones 4x4, autos de carreras y más.",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <head>
-        <title>Taller 4x4 - Modificaciones y Reparaciones</title>
-        <meta name="description" content="Somos expertos en modificaciones 4x4, autos de carreras y más." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
       <body className="bg-gray-100 text-gray-900">
         <header className="bg-black text-white p-4 flex justify-between items-center shadow-md">
           <div className="flex items-center space-x-4">
