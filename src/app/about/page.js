@@ -1,4 +1,6 @@
 "use client";
+/* eslint-disable react/no-unescaped-entities */
+
 import { motion } from "framer-motion";
 
 export default function AboutPage() {
@@ -8,7 +10,6 @@ export default function AboutPage() {
 
       {/* Sección principal (Imagen + Texto) */}
       <div className="flex flex-col md:flex-row items-center gap-10">
-        {/* Imagen del taller */}
         <motion.img 
           src="/images/taller.jpg" 
           alt="Taller 4x4"
@@ -18,7 +19,6 @@ export default function AboutPage() {
           transition={{ duration: 0.8 }}
         />
 
-        {/* Texto de presentación */}
         <motion.div 
           className="md:w-1/2 text-center md:text-left"
           initial={{ opacity: 0, x: 50 }}
@@ -107,7 +107,7 @@ export default function AboutPage() {
             className="p-6 bg-white shadow-lg rounded-lg border-l-4 border-blue-500"
             whileHover={{ scale: 1.05 }}
           >
-            <p className="text-gray-600 italic">"No confiaba en cualquier taller para modificar mi auto de carreras, pero aquí encontré a los mejores."</p>
+            <p className="text-gray-600 italic">&quot;No confiaba en cualquier taller para modificar mi auto de carreras, pero aquí encontré a los mejores.&quot;</p>
             <h3 className="font-bold mt-3 text-blue-500">- Fernanda R.</h3>
           </motion.div>
 
@@ -115,7 +115,7 @@ export default function AboutPage() {
             className="p-6 bg-white shadow-lg rounded-lg border-l-4 border-green-500"
             whileHover={{ scale: 1.05 }}
           >
-            <p className="text-gray-600 italic">"El blindaje de mi vehículo fue un trabajo impecable. Me siento seguro y protegido."</p>
+            <p className="text-gray-600 italic">&quot;El blindaje de mi vehículo fue un trabajo impecable. Me siento seguro y protegido.&quot;</p>
             <h3 className="font-bold mt-3 text-green-500">- Alejandro G.</h3>
           </motion.div>
         </div>
