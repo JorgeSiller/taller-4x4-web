@@ -99,7 +99,7 @@ export default function AboutPage() {
             className="p-6 bg-white shadow-lg rounded-lg border-l-4 border-yellow-500"
             whileHover={{ scale: 1.05 }}
           >
-            <p className="text-gray-600 italic">"Gracias a Taller 4x4, mi Jeep ahora es una bestia en el off-road. Servicio excelente y atención de primera!"</p>
+            <p className="text-gray-600 italic">&quot;Gracias a Taller 4x4, mi Jeep ahora es una bestia en el off-road. Servicio excelente y atención de primera!&quot;</p>
             <h3 className="font-bold mt-3 text-yellow-500">- Carlos M.</h3>
           </motion.div>
 

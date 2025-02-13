@@ -2,6 +2,7 @@
 import "./globals.css";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function RootLayout({ children }) {
   const [darkMode, setDarkMode] = useState(false);
@@ -18,7 +19,7 @@ export default function RootLayout({ children }) {
       <body className="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white">
         <header className={`fixed top-0 w-full p-4 flex justify-between items-center transition-all duration-300 ${scrolled ? "bg-black bg-opacity-80 shadow-md" : "bg-transparent"}`}>
           <div className="flex items-center space-x-4">
-            <img src="/logo.png" alt="Taller 4x4" className="h-10 w-auto" />
+          <Image src="/logo.png" alt="Taller 4x4" width={100} height={40} />
             <h1 className="text-xl font-bold">Taller 4x4</h1>
           </div>
           <nav className="hidden md:flex space-x-6">
