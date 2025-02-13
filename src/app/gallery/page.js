@@ -1,17 +1,13 @@
-"use client";
+"use client"; // Esto debe ir en la PRIMERA LÍNEA
 
 export default function GalleryPage() {
   const images = [
-"use client";
+    "/images/4x4-1.jpg",
+    "/images/4x4-2.jpg",
+    "/images/4x4-3.jpg",
+    "/images/4x4-4.jpg",
+  ];
 
-const images = [
-  "/images/4x4-1.jpg",
-  "/images/4x4-2.jpg",
-  "/images/4x4-3.jpg",
-  "/images/4x4-4.jpg",
-];
-
-export default function GalleryPage() {
   return (
     <div className="p-6">
       <h1 className="text-3xl font-bold mb-6 text-center">Galería de Trabajos</h1>
