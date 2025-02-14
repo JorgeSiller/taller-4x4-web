@@ -30,12 +30,12 @@ export async function generateStaticParams() {
   return Object.keys(servicesData).map((slug) => ({ slug }));
 }
 
-// 🔹 Obtener datos del servicio según el `slug`
+// 🔹 Generación dinámica de la página según el slug
 export default function ServicePage({ params }) {
   const service = servicesData[params.slug];
 
   if (!service) {
-    notFound(); // 🔹 Si el servicio no existe, mostrar error 404
+    return notFound(); // 🔹 Muestra un error 404 si el slug no existe
   }
 
   return (
@@ -43,7 +43,7 @@ export default function ServicePage({ params }) {
       <h1 className="text-4xl font-bold text-center mb-4">{service.title}</h1>
       <p className="text-lg text-gray-700 text-center max-w-2xl mx-auto mb-6">{service.description}</p>
 
-      {/* Galería de imágenes */}
+      {/* 🔹 Galería de imágenes */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {service.images.map((img, index) => (
           <Image key={index} src={img} alt={service.title} width={400} height={300} className="rounded-lg shadow-lg" />
@@ -52,4 +52,3 @@ export default function ServicePage({ params }) {
     </div>
   );
 }
-

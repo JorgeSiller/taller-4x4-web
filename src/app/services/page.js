@@ -16,7 +16,7 @@ export default function ServicesPage() {
       <h1 className="text-4xl font-bold mb-8 text-center">Nuestros Servicios</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((service, index) => (
-          <Link key={index} href={`/services/${service.slug}`}>
+          <Link key={index} href={`/services/${service.slug}`} passHref>
             <motion.div
               className="bg-white shadow-lg p-6 rounded-lg flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-red-500 cursor-pointer"
               initial={{ opacity: 0, y: 50 }}
