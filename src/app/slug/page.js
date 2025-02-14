@@ -1,6 +1,8 @@
-"use client";
+"use client"; // 🔹 Forzar que esta página se renderice solo en el cliente
+
 import { useParams } from "next/navigation";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 // 🔹 Datos de cada servicio
 const servicesData = {
@@ -27,8 +29,15 @@ const servicesData = {
 };
 
 export default function ServicePage() {
-  const { slug } = useParams(); // 🔹 Obtener el slug de la URL
-  const service = servicesData[slug];
+  const { slug } = useParams(); // 🔹 Obtener el slug dinámico
+  const [service, setService] = useState(null);
+
+  // 🔹 Usar useEffect para asegurar que el cliente maneje el estado
+  useEffect(() => {
+    if (slug && servicesData[slug]) {
+      setService(servicesData[slug]);
+    }
+  }, [slug]);
 
   if (!service) {
     return <div className="text-center text-red-500 text-xl p-6">Servicio no encontrado</div>;
