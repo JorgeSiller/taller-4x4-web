@@ -1,9 +1,8 @@
 "use client";
-import { notFound } from "next/navigation";
-import Image from "next/image";
 import { useParams } from "next/navigation";
+import Image from "next/image";
 
-// Datos de cada servicio
+// 🔹 Datos de cada servicio
 const servicesData = {
   "modificaciones-4x4": {
     title: "Modificaciones 4x4",
@@ -27,18 +26,12 @@ const servicesData = {
   },
 };
 
-// 🔹 Asegurar que Next.js reconozca las rutas en producción
-export async function generateStaticParams() {
-  return Object.keys(servicesData).map((slug) => ({ slug }));
-}
-
 export default function ServicePage() {
-  const { slug } = useParams();
+  const { slug } = useParams(); // 🔹 Obtener el slug de la URL
   const service = servicesData[slug];
 
-  // 🔹 Si el servicio no existe, mostrar página 404
   if (!service) {
-    notFound();
+    return <div className="text-center text-red-500 text-xl p-6">Servicio no encontrado</div>;
   }
 
   return (
@@ -46,7 +39,7 @@ export default function ServicePage() {
       <h1 className="text-4xl font-bold text-center mb-4">{service.title}</h1>
       <p className="text-lg text-gray-700 text-center max-w-2xl mx-auto mb-6">{service.description}</p>
 
-      {/* Galería de imágenes */}
+      {/* 🔹 Galería de imágenes */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {service.images.map((img, index) => (
           <Image key={index} src={img} alt={service.title} width={400} height={300} className="rounded-lg shadow-lg" />
