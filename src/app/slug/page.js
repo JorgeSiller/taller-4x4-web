@@ -1,6 +1,7 @@
 "use client";
-import { useParams } from "next/navigation";
+import { notFound } from "next/navigation";
 import Image from "next/image";
+import { useParams } from "next/navigation";
 
 // Datos de cada servicio
 const servicesData = {
@@ -26,17 +27,18 @@ const servicesData = {
   },
 };
 
-// 🔹 Agregar esta función para que Next.js detecte las rutas dinámicas en producción
+// 🔹 Asegurar que Next.js reconozca las rutas en producción
 export async function generateStaticParams() {
   return Object.keys(servicesData).map((slug) => ({ slug }));
 }
 
 export default function ServicePage() {
-  const { slug } = useParams(); // Obtener el slug de la URL
+  const { slug } = useParams();
   const service = servicesData[slug];
 
+  // 🔹 Si el servicio no existe, mostrar página 404
   if (!service) {
-    return <div className="text-center text-red-500 text-xl p-6">Servicio no encontrado</div>;
+    notFound();
   }
 
   return (
