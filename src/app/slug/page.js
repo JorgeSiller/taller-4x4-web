@@ -26,6 +26,11 @@ const servicesData = {
   },
 };
 
+// 🔹 Agregar esta función para que Next.js detecte las rutas dinámicas en producción
+export async function generateStaticParams() {
+  return Object.keys(servicesData).map((slug) => ({ slug }));
+}
+
 export default function ServicePage() {
   const { slug } = useParams(); // Obtener el slug de la URL
   const service = servicesData[slug];
