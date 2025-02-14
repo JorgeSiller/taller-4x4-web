@@ -1,8 +1,5 @@
-"use client"; // 🔹 Forzar que esta página se renderice solo en el cliente
-
-import { useParams } from "next/navigation";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { notFound } from "next/navigation";
 
 // 🔹 Datos de cada servicio
 const servicesData = {
@@ -28,19 +25,17 @@ const servicesData = {
   },
 };
 
-export default function ServicePage() {
-  const { slug } = useParams(); // 🔹 Obtener el slug dinámico
-  const [service, setService] = useState(null);
+// 🔹 Definir las rutas dinámicas para que Next.js las genere en producción
+export async function generateStaticParams() {
+  return Object.keys(servicesData).map((slug) => ({ slug }));
+}
 
-  // 🔹 Usar useEffect para asegurar que el cliente maneje el estado
-  useEffect(() => {
-    if (slug && servicesData[slug]) {
-      setService(servicesData[slug]);
-    }
-  }, [slug]);
+// 🔹 Obtener datos del servicio según el `slug`
+export default function ServicePage({ params }) {
+  const service = servicesData[params.slug];
 
   if (!service) {
-    return <div className="text-center text-red-500 text-xl p-6">Servicio no encontrado</div>;
+    notFound(); // 🔹 Si el servicio no existe, mostrar error 404
   }
 
   return (
@@ -48,7 +43,7 @@ export default function ServicePage() {
       <h1 className="text-4xl font-bold text-center mb-4">{service.title}</h1>
       <p className="text-lg text-gray-700 text-center max-w-2xl mx-auto mb-6">{service.description}</p>
 
-      {/* 🔹 Galería de imágenes */}
+      {/* Galería de imágenes */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {service.images.map((img, index) => (
           <Image key={index} src={img} alt={service.title} width={400} height={300} className="rounded-lg shadow-lg" />
