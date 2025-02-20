@@ -12,7 +12,7 @@ export default function AboutPage() {
       <div className="flex flex-col md:flex-row items-center gap-10">
         <motion.img 
           src="/images/taller.jpg" 
-          alt="Taller 4x4"
+          alt="Xtreme Traction"
           className="w-full md:w-1/2 rounded-lg shadow-lg"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -26,7 +26,7 @@ export default function AboutPage() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <p className="text-lg text-gray-700 mb-4">
-            En <span className="font-semibold text-red-500">Taller 4x4</span>, llevamos más de <strong>10 años</strong> brindando modificaciones de alta calidad para vehículos 4x4, autos de carreras y más.
+            En <span className="font-semibold text-red-500">Taller 4x4</span>, llevamos más de <strong>30 años</strong> brindando modificaciones de alta calidad para vehículos 4x4, autos de carreras y más.
           </p>
           <p className="text-lg text-gray-700">
             Nuestro compromiso es garantizar que cada cliente reciba un servicio excepcional y resultados óptimos para su vehículo.
@@ -86,7 +86,7 @@ export default function AboutPage() {
       <div className="mt-12 bg-gray-100 p-6 rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold text-center mb-6">Actualmente</h2>
         <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto">
-          Hoy en día, <span className="font-semibold text-red-500">Taller 4x4</span> sigue innovando en el mundo automotriz. Contamos con tecnología de última generación y un equipo altamente capacitado.
+          Hoy en día, <span className="font-semibold text-red-500">Xtreme Traction</span> sigue innovando en el mundo automotriz. Contamos con tecnología de última generación y un equipo altamente capacitado.
           Nos especializamos en <strong>modificaciones extremas, optimización de rendimiento y equipamiento de patrullas policiales</strong>.
         </p>
       </div>
@@ -99,7 +99,7 @@ export default function AboutPage() {
             className="p-6 bg-white shadow-lg rounded-lg border-l-4 border-yellow-500"
             whileHover={{ scale: 1.05 }}
           >
-            <p className="text-gray-600 italic">&quot;Gracias a Taller 4x4, mi Jeep ahora es una bestia en el off-road. Servicio excelente y atención de primera!&quot;</p>
+            <p className="text-gray-600 italic">&quot;Gracias a Xtreme Traction, mi Jeep ahora es una bestia en el off-road. Servicio excelente y atención de primera!&quot;</p>
             <h3 className="font-bold mt-3 text-yellow-500">- Carlos M.</h3>
           </motion.div>
 
