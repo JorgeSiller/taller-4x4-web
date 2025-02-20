@@ -12,7 +12,7 @@ export default function AboutPage() {
       <div className="flex flex-col md:flex-row items-center gap-10">
         <motion.img 
           src="/images/taller.jpg" 
-          alt="Xtreme Traction"
+          alt="Taller 4x4"
           className="w-full md:w-1/2 rounded-lg shadow-lg"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -26,7 +26,7 @@ export default function AboutPage() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <p className="text-lg text-gray-700 mb-4">
-            En <span className="font-semibold text-red-500">Taller 4x4</span>, llevamos más de <strong>30 años</strong> brindando modificaciones de alta calidad para vehículos 4x4, autos de carreras y más.
+            En <span className="font-semibold text-red-500">Xtreme Traction</span>, llevamos más de <strong>30 años</strong> brindando modificaciones de alta calidad para vehículos 4x4, autos de carreras y más.
           </p>
           <p className="text-lg text-gray-700">
             Nuestro compromiso es garantizar que cada cliente reciba un servicio excepcional y resultados óptimos para su vehículo.
