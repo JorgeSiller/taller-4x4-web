@@ -21,7 +21,7 @@ const servicesData = {
   "swaps-de-motor": {
     title: "Swaps de Motor",
     description: "Instalamos motores de alto rendimiento con conversiones especializadas.",
-    images: ["/images/motor-1.jpg", "/images/motor-2.jpg", "/images/motor-3.jpg"]
+    images: ["/images/motor-1.JPG", "/images/motor-2.jpg", "/images/motor-3.jpg"]
   },
 };
 
