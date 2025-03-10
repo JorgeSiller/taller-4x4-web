@@ -6,10 +6,10 @@ export default function AboutPage() {
     <div className="relative">
       {/* HERO SECTION CON FONDO */}
       <div className="relative h-[60vh] bg-cover bg-center flex items-center justify-center" 
-        style={{ backgroundImage: "url('/images/about-hero.jpg')" }}>
+        style={{ backgroundImage: "url('/images/about-hero.jpeg')" }}>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <motion.h1 
-          className="relative text-5xl md:text-6xl font-extrabold text-white text-center z-10"
+          className="relativetext-5xl md:text-6xl font-extrabold text-white text-center z-10"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
