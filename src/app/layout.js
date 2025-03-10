@@ -17,9 +17,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es" className={darkMode ? "dark" : ""}>
       <body className="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white">
-        <header className={`fixed top-0 w-full p-4 flex justify-between items-center transition-all duration-300 ${scrolled ? "bg-black bg-opacity-90 shadow-md" : "bg-transparent"}`}>
+        <header className={`fixed top-0 w-full p-4 flex justify-between items-center transition-all duration-300 backdrop-blur-lg ${scrolled ? "bg-black bg-opacity-90 shadow-md" : "bg-transparent"}`}>
           <div className="flex items-center space-x-4">
-            <Image src="/logo.png" alt="Xtreme Traction" width={100} height={40} className="rounded-lg shadow-md" />
+            <Image src="/logo.png" alt="Xtreme Traction" width={120} height={40} className="rounded-lg shadow-md" />
             <h1 className="text-xl font-bold text-white">Xtreme Traction</h1>
           </div>
           <nav className="hidden md:flex space-x-6 text-white">
@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
           </nav>
           <button 
             onClick={() => setDarkMode(!darkMode)}
-            className="p-2 border rounded bg-white text-black dark:bg-gray-800 dark:text-white transition hover:scale-105"
+            className="p-2 border rounded bg-white text-black dark:bg-gray-800 dark:text-white transition hover:scale-110"
           >
             {darkMode ? "☀️ Modo Claro" : "🌙 Modo Oscuro"}
           </button>
