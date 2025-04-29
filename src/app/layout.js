@@ -1,7 +1,7 @@
 "use client";
 import "./globals.css";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
 export default function RootLayout({ children }) {
@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
             </div>
           </Link>
 
-          {/* Menú de navegación (escritorio) */}
+          {/* Menú navegación escritorio */}
           <nav className="hidden md:flex flex-1 justify-center space-x-10 text-white font-semibold text-lg">
             {["Inicio", "Nosotros", "Servicios", "Galería", "Contacto"].map((item, i) => (
               <Link
@@ -40,9 +40,9 @@ export default function RootLayout({ children }) {
             ))}
           </nav>
 
-          {/* Botones derecha */}
+          {/* Botones a la derecha */}
           <div className="flex items-center space-x-4">
-            {/* Botón modo oscuro (solo escritorio) */}
+            {/* Botón modo oscuro escritorio */}
             <button
               onClick={() => setDarkMode(!darkMode)}
               className="hidden md:block p-2 border rounded bg-white text-black dark:bg-gray-800 dark:text-white"
@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
               {darkMode ? "☀️" : "🌙"}
             </button>
 
-            {/* Botón menú móvil */}
+            {/* Botón hamburguesa móvil */}
             <button
               className="md:hidden p-2 text-white focus:outline-none"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -60,7 +60,7 @@ export default function RootLayout({ children }) {
           </div>
         </header>
 
-        {/* Menú desplegable para móviles */}
+        {/* Menú móvil */}
         {menuOpen && (
           <div className="fixed top-20 left-0 w-full bg-neutral-900/95 text-white flex flex-col space-y-6 p-6 md:hidden z-40 backdrop-blur">
             {["Inicio", "Nosotros", "Servicios", "Galería", "Contacto"].map((item, i) => (
@@ -74,7 +74,7 @@ export default function RootLayout({ children }) {
               </Link>
             ))}
 
-            {/* Botón modo oscuro en móviles */}
+            {/* Botón modo oscuro en móvil */}
             <button
               onClick={() => {
                 setDarkMode(!darkMode);
