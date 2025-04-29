@@ -3,9 +3,12 @@
 import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
-import { Home, Info, Wrench, GalleryVerticalEnd, Phone } from "lucide-react";
+import { Home, Info, Wrench, GalleryVerticalEnd, Phone, Menu, X } from "lucide-react";
+import { useState } from "react";
 
 export default function RootLayout({ children }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <html lang="es">
       <body className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
@@ -22,7 +25,7 @@ export default function RootLayout({ children }) {
               />
             </Link>
 
-            {/* Menú */}
+            {/* Menú de escritorio */}
             <nav className="hidden md:flex space-x-8 text-sm font-medium">
               <Link href="/" className="flex items-center space-x-1 hover:text-red-500 transition">
                 <Home className="w-5 h-5" />
@@ -49,10 +52,48 @@ export default function RootLayout({ children }) {
                 <span>Contacto</span>
               </Link>
             </nav>
+
+            {/* Botón Menú móvil */}
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="md:hidden p-2 text-white"
+            >
+              {menuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+            </button>
           </div>
+
+          {/* Menú desplegable para móviles */}
+          {menuOpen && (
+            <div className="md:hidden bg-black/90 backdrop-blur-md absolute w-full top-16 left-0 flex flex-col items-center space-y-6 py-6 transition-all z-50">
+              <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center space-x-2 hover:text-red-500">
+                <Home className="w-5 h-5" />
+                <span>Inicio</span>
+              </Link>
+
+              <Link href="/about" onClick={() => setMenuOpen(false)} className="flex items-center space-x-2 hover:text-red-500">
+                <Info className="w-5 h-5" />
+                <span>Nosotros</span>
+              </Link>
+
+              <Link href="/services" onClick={() => setMenuOpen(false)} className="flex items-center space-x-2 hover:text-red-500">
+                <Wrench className="w-5 h-5" />
+                <span>Servicios</span>
+              </Link>
+
+              <Link href="/gallery" onClick={() => setMenuOpen(false)} className="flex items-center space-x-2 hover:text-red-500">
+                <GalleryVerticalEnd className="w-5 h-5" />
+                <span>Galería</span>
+              </Link>
+
+              <Link href="/contact" onClick={() => setMenuOpen(false)} className="flex items-center space-x-2 hover:text-red-500">
+                <Phone className="w-5 h-5" />
+                <span>Contacto</span>
+              </Link>
+            </div>
+          )}
         </header>
 
-        {/* Espacio para que el header no tape contenido */}
+        {/* Espacio para no tapar el contenido */}
         <div className="h-20" />
 
         <main>{children}</main>
